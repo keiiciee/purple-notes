@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Purple Notes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+            <h1>💜 Purple Notes</h1>
+            <p>Your little space for notes</p>
+        </header>
+
+        <main>
+
+            <button class="new-note-button" onclick="createNote()">
+                + New Note
+            </button>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search your notes..."
+                oninput="searchNotes()"
+            >
+
+            <div id="notesList">
+                <p class="empty">No notes yet 💜</p>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
