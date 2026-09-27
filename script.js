@@ -1,4 +1,10 @@
-let notes = JSON.parse(localStorage.getItem("purpleNotes")) || [];
+let notes = [];
+
+try {
+    notes = JSON.parse(localStorage.getItem("purpleNotes")) || [];
+} catch (error) {
+    notes = [];
+}
 
 
 /* CREATE NEW NOTE */
@@ -38,10 +44,8 @@ function displayNotes(noteList = notes) {
     list.innerHTML = "";
 
     if (noteList.length === 0) {
-
         list.innerHTML =
             '<p class="empty">No notes yet 💜</p>';
-
         return;
     }
 
@@ -86,6 +90,8 @@ function pinNote(id) {
         return note.id === id;
     });
 
+    if (!note) return;
+
     note.pinned = !note.pinned;
 
     notes.sort(function(a, b) {
@@ -104,6 +110,8 @@ function editNote(id) {
     let note = notes.find(function(note) {
         return note.id === id;
     });
+
+    if (!note) return;
 
     let newTitle = prompt("Edit title:", note.title);
 
@@ -169,10 +177,14 @@ function searchNotes() {
 
 function saveNotes() {
 
-    localStorage.setItem(
-        "purpleNotes",
-        JSON.stringify(notes)
-    );
+    try {
+        localStorage.setItem(
+            "purpleNotes",
+            JSON.stringify(notes)
+        );
+    } catch (error) {
+        console.log("Storage unavailable.");
+    }
 }
 
 
