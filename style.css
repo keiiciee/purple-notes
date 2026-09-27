@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #eee5ff;
+    color: #55436b;
+}
+
+.app {
+    max-width: 850px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    color: #8064a2;
+    font-size: 38px;
+}
+
+header p {
+    color: #9a83ad;
+    margin-top: 8px;
+}
+
+.new-note-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 16px;
+    background: #b9a1d2;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.new-note-button:hover {
+    background: #a98cc5;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #d9c8ed;
+    border-radius: 16px;
+    background: white;
+    color: #55436b;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+#searchInput:focus {
+    border-color: #b9a1d2;
+}
+
+#notesList {
+    display: grid;
+    gap: 15px;
+}
+
+.note {
+    background: white;
+    border: 2px solid #dfd0ed;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(130, 100, 160, 0.08);
+}
+
+.note h2 {
+    margin: 0 0 10px;
+    color: #6d587f;
+    font-size: 21px;
+}
+
+.note p {
+    margin: 0;
+    color: #8c789d;
+    white-space: pre-wrap;
+}
+
+.note-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.note-buttons button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #eee5ff;
+    color: #6d587f;
+}
+
+.note-buttons button:hover {
+    background: #dfd0ed;
+}
+
+.empty {
+    text-align: center;
+    color: #b5a5c5;
+    padding: 30px;
+}
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+}
